@@ -7,6 +7,7 @@ const animalSnapshot = require('../src/build-animal-snapshot');
 describe('buildAnimalSnapshot', ()=> {
 
     it('should return correct array format', ()=> {
+
         const expectArrayFormat = [`e4e87cb2-8e9a-4749-abb6-26c59344dfee
 2016/09/02 22:30:46
 cat1 10 9`,

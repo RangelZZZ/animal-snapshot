@@ -1,7 +1,12 @@
 'use strict';
 
-function hello() {
-    return 'hello world';
-}
+const historyData = require('../spec/fixture').loadHistoryData();
+const aniamlSnapshot = require('./build-animal-snapshot');
+const everySnapshot = require('./get-every-snapshot');
 
-module.exports = hello;
+function getSnapshot() {
+    const animalSnapshotArray = aniamlSnapshot.buildAnimalSnapshot(historyData);
+    const everySnapshot = everySnapshot.getEverySnapshot(animalSnapshotArray);
+
+    return everySnapshot;
+}
