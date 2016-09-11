@@ -1,6 +1,6 @@
 'use strict';
 
-function getAnimalLocation(snapShotArray) {
+function buildSnapshotObject(snapShotArray) {
 
     return  snapShotArray.map((snapShot) => {
 
@@ -17,7 +17,7 @@ function getAnimalLocation(snapShotArray) {
     });
 }
 
-exports.getAnimalLocation = getAnimalLocation;
+exports.buildSnapshotObject = buildSnapshotObject;
 
 
 

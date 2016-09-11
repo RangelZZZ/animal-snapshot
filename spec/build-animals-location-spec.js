@@ -1,10 +1,10 @@
 'use strict';
 
-const allAnimalLocations = require('../src/get-all-animal-locations');
+const animalLocations = require('../src/build-animals-location');
 
-describe('integration',()=>{
+describe('buildAnimalsLocation',()=>{
 
-    const animalLocation = [{
+    const snapshotArray = [{
         timeId: `e4e87cb2-8e9a-4749-abb6-26c59344dfee`,
         time: `2016/09/02 22:30:46`,
         allAnimals: [`cat1 10 9`]
@@ -18,7 +18,7 @@ describe('integration',()=>{
         allAnimals: [`cat1 12 8 3 4`]
     }];
 
-    it('should return correct animal location',()=>{
+    it('should return animal location',()=>{
 
        const expectLocation =  [{
            timeId: `e4e87cb2-8e9a-4749-abb6-26c59344dfee`,
@@ -50,16 +50,16 @@ describe('integration',()=>{
                }]
            }];
 
-        const location = allAnimalLocations.getAllLocations(animalLocation);
+        const result = animalLocations.buildAnimalLocations(snapshotArray);
 
-        expect(location).toEqual(expectLocation);
+        expect(result).toEqual(expectLocation);
 
 
     });
 
 });
 
-describe('all animal locations',()=>{
+describe('getAnimalsLocation',()=>{
 
     const animalLocation = [{
         timeId: `e4e87cb2-8e9a-4749-abb6-26c59344dfee`,
@@ -75,7 +75,7 @@ describe('all animal locations',()=>{
         allAnimals: [`cat1 12 8 3 4`]
     }];
 
-    it('should return animal locations',()=>{
+    it('should animal locations',()=>{
 
        const expectAnimalLocations = [{
            timeId: `e4e87cb2-8e9a-4749-abb6-26c59344dfee`,
@@ -104,7 +104,7 @@ describe('all animal locations',()=>{
                    }]
            }];
 
-        const result = allAnimalLocations.getAllAnimalLocations(animalLocation);
+        const result = animalLocations.getAnimalLocation(animalLocation);
 
         expect(result).toEqual(expectAnimalLocations);
     });
@@ -167,7 +167,7 @@ describe('all animal locations',()=>{
                     location:`2 3 0 0`
                 }]
             }];
-        const result = allAnimalLocations.getLocations(locations);
+        const result = animalLocations.buildAccurateLocation(locations);
 
         expect(result).toEqual(expectLocations);
     });

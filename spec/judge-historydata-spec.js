@@ -1,11 +1,10 @@
 'use strict';
 
-const animalSnapShot = require('../src/print-animal-snapshot');
-const inputId = require('./fixture').loadInputId();
+const inputData = require('../src/judge-historydata');
 
-describe('printAnimalSnapshot',()=>{
+describe('historyData',()=>{
 
-    const animalLocation  = [{
+    const historydata = [{
         timeId: `e4e87cb2-8e9a-4749-abb6-26c59344dfee`,
         time: `2016/09/02 22:30:46`,
         allAnimals: [{
@@ -29,17 +28,10 @@ describe('printAnimalSnapshot',()=>{
             allAnimals:[{
                 animalId:`cat1`,
                 location:`12 8 3 4`
-            }, {
-                animalId:`cat2`,
-                location:`2 3 0 0`
             }]
         }];
 
-    it('should print animal snapshot',()=>{
+    const result = inputData.judgeHistoryData(historydata);
 
-       const expectResult = `cat1 15 12
-cat2 2 3`;
-       const result = animalSnapShot.printAnimalSnapShot(animalLocation,inputId);
-       expect(result).toEqual(expectResult);
-    });
+    expect(result).toBeTruthy();
 });

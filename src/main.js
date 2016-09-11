@@ -1,14 +1,27 @@
 'use strict';
 
-const historyData = require('../spec/fixture').loadHistoryData();
-const aniamlSnapshot = require('./build-animal-snapshot');
-const everySnapshot = require('./get-every-snapshot');
+const snapshot = require('./build-snapshot-array');
+const snapshot1 = require('./build-snapshot-object');
+const inputDate = require('./judge-historydata-farmat');
+const animalsLocation = require('./build-animals-location');
+const animalSnapshot = require('./print-animal-snapshot');
 
+function getSnapshot(historyData,id){
 
+    const snapshotArray = snapshot.buildSnapshotArray(historyData);
+    const snapshotObject = snapshot1.buildSnapshotObject(snapshotArray);
 
-function getSnapshot() {
-    const animalSnapshotArray = aniamlSnapshot.buildAnimalSnapshot(historyData);
-    const everySnapshot = everySnapshot.getEverySnapshot(animalSnapshotArray);
+    const validInputDate = inputDate.judgeInputData(snapshotObject);
+    if(!validInputDate){
+        console.log('Invalid format');
 
-    return everySnapshot;
+        return;
+    }
+
+    const location = animalsLocation.buildAnimalLocations(snapshotObject);
+    const snapshotString = animalSnapshot.printAnimalSnapShot(location,id);
+
+    console.log(snapshotString);
 }
+
+exports.getSnapshot = getSnapshot;

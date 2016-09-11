@@ -1,16 +1,16 @@
 'use strict';
 
 
-function getAllLocations(animalLocation){
+function buildAnimalLocations(snapshotArray){
 
-    const locations = getAllAnimalLocations(animalLocation);
+    const locations = getAnimalLocation(snapshotArray);
 
-    return  getLocations(locations);
+    return  buildAccurateLocation(locations);
 }
 
-function getAllAnimalLocations(animalLocation){
+function getAnimalLocation(snapshotArray){
 
-      return  animalLocation.map((location) => {
+      return  snapshotArray.map((location) => {
 
          const animals = location.allAnimals;
          const timeId = location.timeId;
@@ -31,7 +31,7 @@ function getAllAnimalLocations(animalLocation){
 }
 
 
-function getLocations(animalLocation){
+function buildAccurateLocation(animalLocation){
 
     const newAnimalLocations = [animalLocation[0]];
 
@@ -69,8 +69,8 @@ function isExist(preAnimal,animals){
 }
 
 module.exports = {
-    getAllAnimalLocations:getAllAnimalLocations,
-    getLocations:getLocations,
-    getAllLocations:getAllLocations
+    getAnimalLocation:getAnimalLocation,
+    buildAccurateLocation:buildAccurateLocation,
+    buildAnimalLocations:buildAnimalLocations
 };
 
