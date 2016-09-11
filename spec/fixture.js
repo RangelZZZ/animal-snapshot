@@ -15,4 +15,14 @@ dcfa0c7a-5855-4ed2-bc8c-4accae8bd155
 cat1 12 8 3 4`
 }
 
-exports.loadHistoryData = loadHistoryData;
+
+function loadInputId() {
+
+    return 'dcfa0c7a-5855-4ed2-bc8c-4accae8bd155';
+}
+
+module.exports = {
+
+    loadHistoryData:loadHistoryData,
+    loadInputId:loadInputId
+}

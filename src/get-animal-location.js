@@ -2,7 +2,7 @@
 
 function getAnimalLocation(snapShotArray) {
 
-    const animalArray = snapShotArray.map((snapShot) => {
+    return  snapShotArray.map((snapShot) => {
 
         for(let i = 0; i < snapShot.length; i++){
 
@@ -15,8 +15,6 @@ function getAnimalLocation(snapShotArray) {
             return object;
         }
     });
-
-    return animalArray;
 }
 
 exports.getAnimalLocation = getAnimalLocation;
