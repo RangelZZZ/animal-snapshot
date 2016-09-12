@@ -21,7 +21,6 @@ describe('buildSnapshotObject', ()=> {
             time: `2016/09/02 22:31:02`,
             allAnimals: [`cat1 12 8 3 4`]
         }];
-
         const snapshot = snapshotObject.buildSnapshotObject(snapShotArray);
 
         expect(snapshot).toEqual(expectSnapshot);

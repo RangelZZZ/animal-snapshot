@@ -8,10 +8,10 @@ const animalSnapshot = require('./print-animal-snapshot');
 
 function getSnapshot(historyData, id) {
 
-    const snapshotArray = snapshot.buildSnapshotArray(historyData);
+    const snapshotArray  = snapshot.buildSnapshotArray(historyData);
     const snapshotObject = snapshot1.buildSnapshotObject(snapshotArray);
-
     const validInputDate = inputDate.judgeInputData(snapshotObject);
+
     if (!validInputDate) {
         console.log('Invalid format');
 
@@ -19,6 +19,12 @@ function getSnapshot(historyData, id) {
     }
 
     const location = animalsLocation.buildAnimalLocations(snapshotObject);
+
+    if(typeof (location) === "string"){
+        console.log(`Conflict found at ${location}`);
+
+        return;
+    }
     const snapshotString = animalSnapshot.printAnimalSnapShot(location, id);
 
     console.log(snapshotString);

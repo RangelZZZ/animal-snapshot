@@ -21,7 +21,7 @@ function printAnimalSnapShot(animalSnapshot, id) {
                 const xLocation = parseInt(location[0]) + parseInt(location[2]);
                 const yLocation = parseInt(location[1]) + parseInt(location[3]);
 
-                outputString += `${animal.animalId} ${xLocation.toString()} ${yLocation.toString()}\n`
+                outputString += `${animal.animalId} ${xLocation} ${yLocation}\n`
             }
         }
     }

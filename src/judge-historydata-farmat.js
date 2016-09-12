@@ -2,7 +2,6 @@
 
 function judgeInputData(snapshotArray) {
 
-
     const timeIdResult = judgeTimeIdFormat(snapshotArray);
     const timeResult = judgeTimeFormat(snapshotArray);
 
@@ -14,10 +13,12 @@ function judgeTimeIdFormat(snapshotArray) {
     return snapshotArray.every((snapshot)=> {
 
         const timeId = snapshot.timeId;
+
         if (timeId === ' ') {
 
             return false;
         } else {
+
             return timeId.split('').every((id) => (id !== ' '));
         }
     });
@@ -39,7 +40,9 @@ function judgeInputLocation(snapshotArray) {
         return snapshot.allAnimals.every((animal) => {
 
             const length = animal.split(' ').length;
+
             if (length === 3 || length === 5) {
+
                 return true;
             }
         });

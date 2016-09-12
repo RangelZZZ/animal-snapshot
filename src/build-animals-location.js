@@ -1,6 +1,5 @@
 'use strict';
 
-
 function buildAnimalLocations(snapshotArray) {
 
     const locations = getAnimalLocation(snapshotArray);
@@ -44,9 +43,13 @@ function buildAccurateLocation(animalLocation) {
         const preAnimals = animalLocation[i - 1].allAnimals;
 
         for (let preAnimal of preAnimals) {
-            const notExistAnimal = isExist(preAnimal, animals);
+            const notExistAnimal = isNotExist(preAnimal, animals);
 
-            if (notExistAnimal) {
+            if(typeof (notExistAnimal) === "string"){
+
+                return timeId;
+            }
+            if(typeof(notExistAnimal) === "object") {
                 animals.push(notExistAnimal);
             }
         }
@@ -56,15 +59,31 @@ function buildAccurateLocation(animalLocation) {
     return newAnimalLocations;
 }
 
-function isExist(preAnimal, animals) {
+function isNotExist(preAnimal, animals) {
 
-    for (let animal of animals) {
-        if (animal.animalId !== preAnimal.animalId) {
+    if(animals.find((animal) => animal.animalId === preAnimal.animalId)){
 
-            return preAnimal;
-        } else {
-            return false;
+        const preLocation = preAnimal.location.split(' ');
+        const xLocation = parseInt(preLocation[0]) + parseInt(preLocation[2]);
+        const yLocation = parseInt(preLocation[1]) + parseInt(preLocation[3]);
+
+        for(let animal of animals){
+
+            const location = animal.location.split(' ');
+
+            if(animal.animalId === preAnimal.animalId){
+                const x = parseInt(location[0]);
+                const y = parseInt(location[1]);
+
+                if(x !== xLocation || y !== yLocation){
+
+                    return animal.animalId;
+                }
+            }
         }
+    }else{
+
+        return preAnimal;
     }
 }
 

@@ -2,7 +2,7 @@
 
 const inputData = require('../src/judge-historydata-farmat');
 
-describe('judgeInputDate ', ()=> {
+describe('judgeInputDate', ()=> {
 
     it('should return true when timeId and time are right', ()=> {
 

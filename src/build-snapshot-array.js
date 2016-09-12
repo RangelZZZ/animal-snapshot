@@ -3,9 +3,7 @@
 function buildSnapshotArray(historyData) {
 
     const animalSnapshotArray = buildAnimalSnapshot(historyData);
-    const everySnapshotArray = buildEverySnapshot(animalSnapshotArray);
-
-    return everySnapshotArray;
+    return buildEverySnapshot(animalSnapshotArray);
 }
 
 function buildAnimalSnapshot(historyData) {
