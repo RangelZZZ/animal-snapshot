@@ -4,8 +4,8 @@
 
 
 ## 使用方法
-(1)：将项目克隆到自己的本地：git clone  <br/>
-(2)：运行 npm install   <br/>
+
+(2)：运行 npm install   <br/>(1)：将项目克隆到自己的本地：git clone git@github.com:RangelZZZ/animal-snapshot.git <br/>
 (3)：运行 jasmine   <br/>
 
 
