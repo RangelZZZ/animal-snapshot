@@ -15,7 +15,7 @@ describe('buildSnapshotObject', ()=> {
         }, {
             timeId: `351055db-33e6-4f9b-bfe1-16f1ac446ac1`,
             time: `2016/09/02 22:30:52`,
-            allAnimals: [`cat1 10 9 2 -1`,`cat2 2 3`]
+            allAnimals: [`cat1 10 9 2 -1`, `cat2 2 3`]
         }, {
             timeId: `dcfa0c7a-5855-4ed2-bc8c-4accae8bd155`,
             time: `2016/09/02 22:31:02`,

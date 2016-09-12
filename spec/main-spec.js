@@ -3,21 +3,21 @@
 const inputData = require('./fixture');
 const main = require('../src/main');
 
-describe('mianTest',()=>{
+describe('mianTest', ()=> {
 
     const id = inputData.loadInputId();
 
-    it("should output animal snapshot",()=>{
+    it("should output animal snapshot", ()=> {
         const historyData = inputData.loadHistoryData();
 
-        spyOn(console,'log');
+        spyOn(console, 'log');
 
-       main.getSnapshot(historyData,id);
-       expect(console.log).toHaveBeenCalledWith(`cat1 15 12
+        main.getSnapshot(historyData, id);
+        expect(console.log).toHaveBeenCalledWith(`cat1 15 12
 cat2 2 3`)
-   });
+    });
 
-    it('should outout valid Invalid format when historyDate is invalid',()=>{
+    it('should outout valid Invalid format when historyDate is invalid', ()=> {
 
         const historyData = `e4e87cb2-8e9a 4749-abb6-26c59344dfee
         2016 09 02 22:30:46
@@ -30,7 +30,7 @@ cat2 2 3`)
         2016/09/02 22:31:02
         cat1 12 8 3 4`;
 
-        spyOn(console,'log');
+        spyOn(console, 'log');
         main.getSnapshot(historyData, id);
 
         expect(console.log).toHaveBeenCalledWith('Invalid format');

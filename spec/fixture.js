@@ -23,6 +23,6 @@ function loadInputId() {
 
 module.exports = {
 
-    loadHistoryData:loadHistoryData,
-    loadInputId:loadInputId
+    loadHistoryData: loadHistoryData,
+    loadInputId: loadInputId
 }

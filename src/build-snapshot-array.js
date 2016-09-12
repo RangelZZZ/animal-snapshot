@@ -3,9 +3,9 @@
 function buildSnapshotArray(historyData) {
 
     const animalSnapshotArray = buildAnimalSnapshot(historyData);
-    const everySnapshotarray = buildEverySnapshot(animalSnapshotArray);
+    const everySnapshotArray = buildEverySnapshot(animalSnapshotArray);
 
-    return everySnapshotarray;
+    return everySnapshotArray;
 }
 
 function buildAnimalSnapshot(historyData) {
@@ -20,7 +20,7 @@ function buildEverySnapshot(animalSnapshotArray) {
 
 
 module.exports = {
-    buildAnimalSnapshot : buildAnimalSnapshot,
+    buildAnimalSnapshot: buildAnimalSnapshot,
     buidEverySnapshot: buildEverySnapshot,
-    buildSnapshotArray :buildSnapshotArray
+    buildSnapshotArray: buildSnapshotArray
 };

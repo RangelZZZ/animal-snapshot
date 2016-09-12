@@ -2,9 +2,9 @@
 
 function buildSnapshotObject(snapShotArray) {
 
-    return  snapShotArray.map((snapShot) => {
+    return snapShotArray.map((snapShot) => {
 
-        for(let i = 0; i < snapShot.length; i++){
+        for (let i = 0; i < snapShot.length; i++) {
 
             const object = {timeId: '', time: '', allAnimals: []};
 
